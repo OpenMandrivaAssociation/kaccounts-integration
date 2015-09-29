@@ -1,15 +1,9 @@
-#
-# Please do not update/rebuild/touch this package before asking first to mikala and/or neoclust
-# This package is part of the KDE Stack.
-#
 #define debug_package %{nil}
-
-%define rel 1
 
 Summary:        Small system to administer web accounts across the KDE desktop
 Name:           kaccounts-integration
 Version: 15.08.1
-Release:        %mkrel %rel
+Release:        1
 License:        GPLv2+
 Group:          System/Base
 Source0:        http://fr2.rpmfind.net/linux/KDE/stable/plasma/%{name}-%{version}.tar.xz
@@ -23,16 +17,16 @@ BuildRequires:  pkgconfig(Qt5Test)
 BuildRequires:  pkgconfig(Qt5Gui)
 BuildRequires:  pkgconfig(Qt5Widgets)
 
-BuildRequires:  kf5-macros
-BuildRequires:  kcmutils-devel
-BuildRequires:  kio-devel
-BuildRequires:  ki18n-devel
-BuildRequires:  kwidgetsaddons-devel
-BuildRequires:  kcoreaddons-devel
-BuildRequires:  kiconthemes-devel
-BuildRequires:  kconfig-devel
-BuildRequires:  kwallet-devel
-BuildRequires:  kdbusaddons-devel
+BuildRequires:  cmake(ECM)
+BuildRequires:  cmake(KF5KCMUtils)
+BuildRequires:  cmake(KF5KIO)
+BuildRequires:  cmake(KF5I18n)
+BuildRequires:  cmake(KF5WidgetsAddons)
+BuildRequires:  cmake(KF5CoreAddons)
+BuildRequires:  cmake(KF5IconThemes)
+BuildRequires:  cmake(KF5Config)
+BuildRequires:  cmake(KF5Wallet)
+BuildRequires:  cmake(KF5DBusAddons)
 BuildRequires:  kdepimlibs-devel
 
 BuildRequires:  pkgconfig(libsignon-qt5)
@@ -48,9 +42,9 @@ Small system to administer web accounts across the KDE desktop
 %files 
 %_qt5_plugindir/*.so
 %_qt5_plugindir/kaccounts/daemonplugins/kaccounts_akonadi_plugin.so
-%_kf5_qmldir/org/kde/kaccounts
-%_kf5_services/kcm_kaccounts.desktop
-%_kf5_services/kded/accounts.desktop
+%_kde5_qmldir/org/kde/kaccounts
+%_kde5_services/kcm_kaccounts.desktop
+%_kde5_services/kded/accounts.desktop
 
 #--------------------------------------------------------------------
 
@@ -66,8 +60,8 @@ Group:        System/Libraries
 Small system to administer web accounts across the KDE desktop
 
 %files -n %libkaccounts
-%_kf5_libdir/libkaccounts.so.%{kaccounts_major}*
-%_kf5_libdir/libkaccounts.so.1
+%_kde5_libdir/libkaccounts.so.%{kaccounts_major}*
+%_kde5_libdir/libkaccounts.so.1
 
 #--------------------------------------------------------------------
 
@@ -88,57 +82,18 @@ based on %name.
 %files -n %kaccounts_devel
 %_includedir/KAccounts
 %_libdir/cmake/KAccounts
-%_kf5_libdir/libkaccounts.so
+%_kde5_libdir/libkaccounts.so
 
 #--------------------------------------------------------------------
 
 %prep
 %setup -q 
-%autopatch -p1
+%apply_patches
 
 %build
-%cmake_kf5
-%make
+%cmake_kde5
+%ninja
 
 %install
-%makeinstall_std -C build
-
-
-
-%changelog
-* Fri Sep 18 2015 neoclust <neoclust> 15.08.1-1.mga6
-+ Revision: 880394
-- New version 15.08.1
-
-* Thu Aug 27 2015 neoclust <neoclust> 15.08.0-2.mga6
-+ Revision: 870329
-- Remove wrong patch
-
-* Wed Aug 19 2015 neoclust <neoclust> 15.08.0-1.mga6
-+ Revision: 865912
-- New version 15.08.0
-
-* Wed Aug 12 2015 neoclust <neoclust> 15.07.90-2.mga6
-+ Revision: 863928
-- Plasma Mass Rebuild - Rebuild for new Plasma
-
-* Sun Aug 09 2015 neoclust <neoclust> 15.07.90-1.mga6
-+ Revision: 861725
-- New version 15.07.90
-
-* Fri Jul 31 2015 wally <wally> 15.07.80-2.mga6
-+ Revision: 860144
-- add patch to fix paths in CMake files
-
-* Fri Jul 31 2015 neoclust <neoclust> 15.07.80-1.mga6
-+ Revision: 859328
-- New version 15.07.80
-
-* Sun Jul 19 2015 neoclust <neoclust> 15.04.3-2.mga6
-+ Revision: 855266
-- Rebuild with correct name
-
-* Sun Jul 19 2015 neoclust <neoclust> 15.04.3-1.mga6
-+ Revision: 855253
-- imported package kaccounts-integration
+%ninja_install -C build
 
