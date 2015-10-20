@@ -42,7 +42,6 @@ Small system to administer web accounts across the KDE desktop
 
 %files
 %_qt5_plugindir/*.so
-%_qt5_plugindir/kaccounts/daemonplugins/kaccounts_akonadi_plugin.so
 %_kde5_qmldir/org/kde/kaccounts
 %_kde5_services/kcm_kaccounts.desktop
 %_kde5_services/kded/accounts.desktop
