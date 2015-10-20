@@ -1,36 +1,36 @@
 #define debug_package %{nil}
 
-Summary:        Small system to administer web accounts across the KDE desktop
-Name:           kaccounts-integration
-Version: 15.08.2
-Release:        1
-License:        GPLv2+
-Group:          System/Base
+Summary:	Small system to administer web accounts across the KDE desktop
+Name:		kaccounts-integration
+Version:	15.08.2
+Release:	1
+License:	GPLv2+
+Group:		System/Base
 Source0:        http://fr2.rpmfind.net/linux/KDE/stable/plasma/%{name}-%{version}.tar.xz
-URL:            https://www.kde.org/
+URL:		https://www.kde.org/
 
-BuildRequires:  pkgconfig(Qt5Core)
-BuildRequires:  pkgconfig(Qt5DBus)
-BuildRequires:  pkgconfig(Qt5Xml)
-BuildRequires:  pkgconfig(Qt5Concurrent)
-BuildRequires:  pkgconfig(Qt5Test)
-BuildRequires:  pkgconfig(Qt5Gui)
-BuildRequires:  pkgconfig(Qt5Widgets)
+BuildRequires:	pkgconfig(Qt5Core)
+BuildRequires:	pkgconfig(Qt5DBus)
+BuildRequires:	pkgconfig(Qt5Xml)
+BuildRequires:	pkgconfig(Qt5Concurrent)
+BuildRequires:	pkgconfig(Qt5Test)
+BuildRequires:	pkgconfig(Qt5Gui)
+BuildRequires:	pkgconfig(Qt5Widgets)
 
-BuildRequires:  cmake(ECM)
-BuildRequires:  cmake(KF5KCMUtils)
-BuildRequires:  cmake(KF5KIO)
-BuildRequires:  cmake(KF5I18n)
-BuildRequires:  cmake(KF5WidgetsAddons)
-BuildRequires:  cmake(KF5CoreAddons)
-BuildRequires:  cmake(KF5IconThemes)
-BuildRequires:  cmake(KF5Config)
-BuildRequires:  cmake(KF5Wallet)
-BuildRequires:  cmake(KF5DBusAddons)
-BuildRequires:  kdepimlibs-devel
+BuildRequires:	cmake(ECM)
+BuildRequires:	cmake(KF5KCMUtils)
+BuildRequires:	cmake(KF5KIO)
+BuildRequires:	cmake(KF5I18n)
+BuildRequires:	cmake(KF5WidgetsAddons)
+BuildRequires:	cmake(KF5CoreAddons)
+BuildRequires:	cmake(KF5IconThemes)
+BuildRequires:	cmake(KF5Config)
+BuildRequires:	cmake(KF5Wallet)
+BuildRequires:	cmake(KF5DBusAddons)
+BuildRequires:	kdepimlibs-devel
 
-BuildRequires:  pkgconfig(libsignon-qt5)
-BuildRequires:  pkgconfig(accounts-qt5)
+BuildRequires:	pkgconfig(libsignon-qt5)
+BuildRequires:	pkgconfig(accounts-qt5)
 
 BuildRequires:	libxml2-utils
 BuildRequires:	docbook-dtds
@@ -39,7 +39,7 @@ BuildRequires:	docbook-style-xsl
 %description
 Small system to administer web accounts across the KDE desktop
 
-%files 
+%files
 %_qt5_plugindir/*.so
 %_qt5_plugindir/kaccounts/daemonplugins/kaccounts_akonadi_plugin.so
 %_kde5_qmldir/org/kde/kaccounts
@@ -51,15 +51,14 @@ Small system to administer web accounts across the KDE desktop
 %define kaccounts_major 15
 %define libkaccounts %mklibname kaccounts %{kaccounts_major}
 
-%package -n %libkaccounts
-Summary:      Small system to administer web accounts across the KDE desktop
-Group:        System/Libraries
+%package -n %{libkaccounts}
+Summary:	Small system to administer web accounts across the KDE desktop
+Group:		System/Libraries
 
+%description -n %{libkaccounts}
+Small system to administer web accounts across the KDE desktop.
 
-%description -n %libkaccounts
-Small system to administer web accounts across the KDE desktop
-
-%files -n %libkaccounts
+%files -n %{libkaccounts}
 %_kde5_libdir/libkaccounts.so.%{kaccounts_major}*
 %_kde5_libdir/libkaccounts.so.1
 
@@ -67,19 +66,18 @@ Small system to administer web accounts across the KDE desktop
 
 %define kaccounts_devel %mklibname kaccounts -d
 
-%package -n %kaccounts_devel
+%package -n %{kaccounts_devel}
+Summary:	Devel stuff for %name
+Group:		Development/KDE and Qt
+Requires:	%name = %version-%release
+Requires:	%libkaccounts = %version-%release
+Provides:	%name-devel = %{version}-%{release}
 
-Summary:        Devel stuff for %name
-Group:          Development/KDE and Qt
-Requires:       %name = %version-%release
-Requires:       %libkaccounts = %version-%release
-Provides:       %name-devel = %{version}-%{release}
-
-%description -n %kaccounts_devel
+%description -n %{kaccounts_devel}
 This package contains header files needed if you wish to build applications
 based on %name.
 
-%files -n %kaccounts_devel
+%files -n %{kaccounts_devel}
 %_includedir/KAccounts
 %_libdir/cmake/KAccounts
 %_kde5_libdir/libkaccounts.so
@@ -87,7 +85,7 @@ based on %name.
 #--------------------------------------------------------------------
 
 %prep
-%setup -q 
+%setup -q
 %apply_patches
 
 %build
