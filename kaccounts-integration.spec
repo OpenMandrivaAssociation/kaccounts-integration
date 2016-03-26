@@ -3,7 +3,7 @@
 Summary:	Small system to administer web accounts across the KDE desktop
 Name:		kaccounts-integration
 Version:	15.12.3
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		System/Base
 Source0:        http://fr2.rpmfind.net/linux/KDE/stable/plasma/%{name}-%{version}.tar.xz
