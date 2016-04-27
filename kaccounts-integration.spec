@@ -2,11 +2,11 @@
 
 Summary:	Small system to administer web accounts across the KDE desktop
 Name:		kaccounts-integration
-Version:	15.12.3
-Release:	2
+Version:	16.04.0
+Release:	1
 License:	GPLv2+
 Group:		System/Base
-Source0:        http://fr2.rpmfind.net/linux/KDE/stable/plasma/%{name}-%{version}.tar.xz
+Source0:        http://download.kde.org/stable/applications/%{version}/src/%{name}-%{version}.tar.xz
 URL:		https://www.kde.org/
 
 BuildRequires:	pkgconfig(Qt5Core)
@@ -31,6 +31,7 @@ BuildRequires:	kdepimlibs-devel
 
 BuildRequires:	pkgconfig(libsignon-qt5)
 BuildRequires:	pkgconfig(accounts-qt5)
+BuildRequires:	pkgconfig(libaccounts-glib) >= 1.21
 
 BuildRequires:	libxml2-utils
 BuildRequires:	docbook-dtds
@@ -48,7 +49,7 @@ Small system to administer web accounts across the KDE desktop
 
 #--------------------------------------------------------------------
 
-%define kaccounts_major 15
+%define kaccounts_major 16
 %define libkaccounts %mklibname kaccounts %{kaccounts_major}
 
 %package -n %{libkaccounts}
