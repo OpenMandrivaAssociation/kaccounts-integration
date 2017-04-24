@@ -1,12 +1,13 @@
 #define debug_package %{nil}
+%define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 
 Summary:	Small system to administer web accounts across the KDE desktop
 Name:		kaccounts-integration
-Version:	16.12.2
+Version:	17.04.0
 Release:	1
 License:	GPLv2+
 Group:		System/Base
-Source0:        http://download.kde.org/stable/applications/%{version}/src/%{name}-%{version}.tar.xz
+Source0:        http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
 URL:		https://www.kde.org/
 
 BuildRequires:	pkgconfig(Qt5Core)
@@ -41,7 +42,7 @@ Requires:	signon-plugin-oauth2
 %description
 Small system to administer web accounts across the KDE desktop
 
-%files
+%files -f %{name}.lang
 %_qt5_plugindir/*.so
 %_kde5_qmldir/org/kde/kaccounts
 %_kde5_services/kcm_kaccounts.desktop
@@ -49,13 +50,14 @@ Small system to administer web accounts across the KDE desktop
 
 #--------------------------------------------------------------------
 
-%define kaccounts_major 16
+%define kaccounts_major %(echo %{version} |cut -d. -f1)
 %define libkaccounts %mklibname kaccounts %{kaccounts_major}
 
 %package -n %{libkaccounts}
 Summary:	Small system to administer web accounts across the KDE desktop
 Group:		System/Libraries
 Obsoletes:	%{mklibname kaccounts 15} < %{EVRD}
+Obsoletes:	%{mklibname kaccounts 16} < %{EVRD}
 
 %description -n %{libkaccounts}
 Small system to administer web accounts across the KDE desktop.
@@ -96,4 +98,4 @@ based on %name.
 
 %install
 %ninja_install -C build
-
+%find_lang %{name}
