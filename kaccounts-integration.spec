@@ -38,11 +38,11 @@ BuildRequires:	libxml2-utils
 BuildRequires:	docbook-dtds
 BuildRequires:	docbook-style-xsl
 Requires:	signon-plugin-oauth2
-Requires:	signon >= 8.58
+Requires:	signond >= 8.58
 Requires:	signon-ui >= 0.17-0
 
 %description
-Small system to administer web accounts across the KDE desktop
+Small system to administer web accounts across the KDE desktop.
 
 %files -f %{name}.lang
 %_qt5_plugindir/*.so
