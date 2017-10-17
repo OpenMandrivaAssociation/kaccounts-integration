@@ -4,7 +4,7 @@
 Summary:	Small system to administer web accounts across the KDE desktop
 Name:		kaccounts-integration
 Version:	17.04.0
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		System/Base
 Source0:        http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
@@ -38,9 +38,11 @@ BuildRequires:	libxml2-utils
 BuildRequires:	docbook-dtds
 BuildRequires:	docbook-style-xsl
 Requires:	signon-plugin-oauth2
+Requires:	signond >= 8.58
+Requires:	signon-ui >= 0.17-0
 
 %description
-Small system to administer web accounts across the KDE desktop
+Small system to administer web accounts across the KDE desktop.
 
 %files -f %{name}.lang
 %_qt5_plugindir/*.so
