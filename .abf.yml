@@ -1,2 +1,4 @@
+removed_sources:
+  kaccounts-integration-17.12.1.tar.xz: a9f3c2d314aaa8a90583ee1e62554bc5f16f352c
 sources:
-  kaccounts-integration-17.04.0.tar.xz: 084c4381c533b5f709459b8c5829dd128383580f
+  kaccounts-integration-17.12.2.tar.xz: b015629ff510c390de6141b38fd24be4b6762b14

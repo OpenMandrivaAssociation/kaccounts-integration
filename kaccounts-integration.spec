@@ -3,8 +3,8 @@
 
 Summary:	Small system to administer web accounts across the KDE desktop
 Name:		kaccounts-integration
-Version:	17.04.0
-Release:	2
+Version:	 17.12.2
+Release:	1
 License:	GPLv2+
 Group:		System/Base
 Source0:        http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
@@ -58,6 +58,7 @@ Small system to administer web accounts across the KDE desktop.
 %package -n %{libkaccounts}
 Summary:	Small system to administer web accounts across the KDE desktop
 Group:		System/Libraries
+Requires:	%{name} >= %{EVRD}
 Obsoletes:	%{mklibname kaccounts 15} < %{EVRD}
 Obsoletes:	%{mklibname kaccounts 16} < %{EVRD}
 
@@ -73,11 +74,10 @@ Small system to administer web accounts across the KDE desktop.
 %define kaccounts_devel %mklibname kaccounts -d
 
 %package -n %{kaccounts_devel}
-Summary:	Devel stuff for %name
+Summary:	Devel stuff for %{name}
 Group:		Development/KDE and Qt
-Requires:	%name = %version-%release
-Requires:	%libkaccounts = %version-%release
-Provides:	%name-devel = %{version}-%{release}
+Requires:	%{libkaccounts} = %{EVRD}
+Provides:	%{name}-devel = %{EVRD}
 
 %description -n %{kaccounts_devel}
 This package contains header files needed if you wish to build applications
