@@ -61,6 +61,7 @@ Group:		System/Libraries
 Requires:	%{name} >= %{EVRD}
 Obsoletes:	%{mklibname kaccounts 15} < %{EVRD}
 Obsoletes:	%{mklibname kaccounts 16} < %{EVRD}
+Obsoletes:	%{mklibname kaccounts 17} < %{EVRD}
 
 %description -n %{libkaccounts}
 Small system to administer web accounts across the KDE desktop.
