@@ -3,8 +3,8 @@
 
 Summary:	Small system to administer web accounts across the KDE desktop
 Name:		kaccounts-integration
-Version:	 19.04.0
-Release:	1
+Version:	19.04.0
+Release:	2
 License:	GPLv2+
 Group:		System/Base
 Source0:        http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
@@ -63,6 +63,7 @@ Requires:	%{name} >= %{EVRD}
 Obsoletes:	%{mklibname kaccounts 15} < %{EVRD}
 Obsoletes:	%{mklibname kaccounts 16} < %{EVRD}
 Obsoletes:	%{mklibname kaccounts 17} < %{EVRD}
+Obsoletes:	%{mklibname kaccounts 18} < %{EVRD}
 
 %description -n %{libkaccounts}
 Small system to administer web accounts across the KDE desktop.
@@ -93,8 +94,7 @@ based on %name.
 #--------------------------------------------------------------------
 
 %prep
-%setup -q
-%apply_patches
+%autosetup -p1
 
 %build
 %cmake_kde5
