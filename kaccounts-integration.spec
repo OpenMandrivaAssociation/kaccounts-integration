@@ -38,6 +38,7 @@ BuildRequires:	docbook-style-xsl
 Requires:	signon-plugin-oauth2
 Requires:	signond >= 8.58
 Requires:	signon-ui >= 0.17-0
+Requires:	signon-kwallet-extension
 Requires:	UbuntuOnlineAccounts-qml
 
 %description
