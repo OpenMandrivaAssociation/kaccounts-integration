@@ -7,7 +7,7 @@ Version:	19.12.1
 Release:	1
 License:	GPLv2+
 Group:		System/Base
-Source0:        http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
+Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 URL:		https://www.kde.org/
 
 BuildRequires:	pkgconfig(Qt5Core)
@@ -17,7 +17,6 @@ BuildRequires:	pkgconfig(Qt5Concurrent)
 BuildRequires:	pkgconfig(Qt5Test)
 BuildRequires:	pkgconfig(Qt5Gui)
 BuildRequires:	pkgconfig(Qt5Widgets)
-
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF5KCMUtils)
 BuildRequires:	cmake(KF5KIO)
@@ -30,17 +29,16 @@ BuildRequires:	cmake(KF5Config)
 BuildRequires:	cmake(KF5Wallet)
 BuildRequires:	cmake(KF5DBusAddons)
 BuildRequires:	kdepimlibs-devel
-
 BuildRequires:	pkgconfig(libsignon-qt5)
 BuildRequires:	pkgconfig(accounts-qt5)
 BuildRequires:	pkgconfig(libaccounts-glib) >= 1.21
-
 BuildRequires:	libxml2-utils
 BuildRequires:	docbook-dtds
 BuildRequires:	docbook-style-xsl
 Requires:	signon-plugin-oauth2
 Requires:	signond >= 8.58
 Requires:	signon-ui >= 0.17-0
+Requires:	UbuntuOnlineAccounts-qml
 
 %description
 Small system to administer web accounts across the KDE desktop.
