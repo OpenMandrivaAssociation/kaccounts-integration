@@ -64,6 +64,7 @@ Obsoletes:	%{mklibname kaccounts 15} < %{EVRD}
 Obsoletes:	%{mklibname kaccounts 16} < %{EVRD}
 Obsoletes:	%{mklibname kaccounts 17} < %{EVRD}
 Obsoletes:	%{mklibname kaccounts 18} < %{EVRD}
+Obsoletes:	%{mklibname kaccounts 19} < %{EVRD}
 
 %description -n %{libkaccounts}
 Small system to administer web accounts across the KDE desktop.
