@@ -3,7 +3,7 @@
 
 Summary:	Small system to administer web accounts across the KDE desktop
 Name:		kaccounts-integration
-Version:	20.04.2
+Version:	20.04.3
 Release:	1
 License:	GPLv2+
 Group:		System/Base
@@ -71,7 +71,7 @@ Small system to administer web accounts across the KDE desktop.
 
 %files -n %{libkaccounts}
 %_kde5_libdir/libkaccounts.so.%{kaccounts_major}*
-%_kde5_libdir/libkaccounts.so.1
+%_kde5_libdir/libkaccounts.so.2
 
 #--------------------------------------------------------------------
 
