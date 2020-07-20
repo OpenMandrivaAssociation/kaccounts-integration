@@ -3,7 +3,7 @@
 
 Summary:	Small system to administer web accounts across the KDE desktop
 Name:		kaccounts-integration
-Version:	20.04.3
+Version:	20.07.80
 Release:	1
 License:	GPLv2+
 Group:		System/Base
@@ -28,6 +28,7 @@ BuildRequires:	cmake(KF5IconThemes)
 BuildRequires:	cmake(KF5Config)
 BuildRequires:	cmake(KF5Wallet)
 BuildRequires:	cmake(KF5DBusAddons)
+BuildRequires:	cmake(KF5DAV)
 BuildRequires:	kdepimlibs-devel
 BuildRequires:	pkgconfig(libsignon-qt5)
 BuildRequires:	pkgconfig(accounts-qt5)
@@ -49,6 +50,7 @@ Small system to administer web accounts across the KDE desktop.
 %_kde5_services/kcm_kaccounts.desktop
 %{_libdir}/qt5/plugins/kcms/kcm_kaccounts.so
 %{_libdir}/qt5/plugins/kf5/kded/kded_accounts.so
+%{_libdir}/qt5/plugins/kaccounts
 %{_datadir}/kpackage/kcms/kcm_kaccounts
 
 #--------------------------------------------------------------------
