@@ -3,7 +3,7 @@
 
 Summary:	Small system to administer web accounts across the KDE desktop
 Name:		kaccounts-integration
-Version:	20.11.90
+Version:	20.12.0
 Release:	1
 License:	GPLv2+
 Group:		System/Base
