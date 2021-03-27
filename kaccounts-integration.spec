@@ -4,7 +4,7 @@
 Summary:	Small system to administer web accounts across the KDE desktop
 Name:		kaccounts-integration
 Version:	21.03.80
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		System/Base
 Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
@@ -56,7 +56,7 @@ Small system to administer web accounts across the KDE desktop.
 #--------------------------------------------------------------------
 
 %define kaccounts_major %(echo %{version} |cut -d. -f1)
-%define libkaccounts %mklibname kaccounts %{kaccounts_major}
+%define libkaccounts %mklibname kaccounts
 
 %package -n %{libkaccounts}
 Summary:	Small system to administer web accounts across the KDE desktop
@@ -67,6 +67,8 @@ Obsoletes:	%{mklibname kaccounts 16} < %{EVRD}
 Obsoletes:	%{mklibname kaccounts 17} < %{EVRD}
 Obsoletes:	%{mklibname kaccounts 18} < %{EVRD}
 Obsoletes:	%{mklibname kaccounts 19} < %{EVRD}
+Obsoletes:	%{mklibname kaccounts 20} < %{EVRD}
+Obsoletes:	%{mklibname kaccounts 21} < %{EVRD}
 
 %description -n %{libkaccounts}
 Small system to administer web accounts across the KDE desktop.
