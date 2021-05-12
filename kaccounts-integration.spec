@@ -1,9 +1,8 @@
-#define debug_package %{nil}
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 
 Summary:	Small system to administer web accounts across the KDE desktop
 Name:		kaccounts-integration
-Version:	21.04.0
+Version:	21.04.1
 Release:	1
 License:	GPLv2+
 Group:		System/Base
