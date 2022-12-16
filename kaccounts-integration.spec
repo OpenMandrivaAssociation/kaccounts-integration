@@ -2,7 +2,7 @@
 
 Summary:	Small system to administer web accounts across the KDE desktop
 Name:		kaccounts-integration
-Version:	22.08.3
+Version:	22.12.0
 Release:	1
 License:	GPLv2+
 Group:		System/Base
@@ -46,10 +46,9 @@ Small system to administer web accounts across the KDE desktop.
 
 %files -f %{name}.lang
 %_kde5_qmldir/org/kde/kaccounts
-%_kde5_services/kcm_kaccounts.desktop
-%{_libdir}/qt5/plugins/kcms/kcm_kaccounts.so
 %{_libdir}/qt5/plugins/kf5/kded/kded_accounts.so
 %{_libdir}/qt5/plugins/kaccounts
+%{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_kaccounts.so
 %{_datadir}/kpackage/kcms/kcm_kaccounts
 
 #--------------------------------------------------------------------
