@@ -35,6 +35,7 @@ BuildRequires:	pkgconfig(libaccounts-glib) >= 1.21
 BuildRequires:	libxml2-utils
 BuildRequires:	docbook-dtds
 BuildRequires:	docbook-style-xsl
+BuildRequires:	cmake(QCoro5)
 Requires:	signon-plugin-oauth2
 Requires:	signond >= 8.58
 Requires:	signon-ui >= 0.17-0
