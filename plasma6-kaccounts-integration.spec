@@ -2,7 +2,7 @@
 
 Summary:	Small system to administer web accounts across the KDE desktop
 Name:		plasma6-kaccounts-integration
-Version:	24.01.90
+Version:	24.01.95
 Release:	1
 License:	GPLv2+
 Group:		System/Base
@@ -85,6 +85,8 @@ Summary:	Devel stuff for %{name}
 Group:		Development/KDE and Qt
 Requires:	%{libkaccounts} = %{EVRD}
 Provides:	%{name}-devel = %{EVRD}
+# intltool-merge is used by KAccountsMacros.cmake
+Requires:	intltool
 
 %description -n %{kaccounts_devel}
 This package contains header files needed if you wish to build applications
