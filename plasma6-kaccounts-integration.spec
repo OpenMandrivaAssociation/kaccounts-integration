@@ -46,7 +46,7 @@ BuildRequires:	cmake(QCoro6)
 Requires:	signon-plugin-oauth2
 Requires:	signond >= 8.62
 Requires:	signon-ui >= 0.17-0
-Requires:	signon-kwallet-extension
+Requires:	plasma6-signon-kwallet-extension
 Requires:	UbuntuOnlineAccounts-qml
 
 %description
