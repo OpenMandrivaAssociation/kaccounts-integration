@@ -5,8 +5,8 @@
 
 Summary:	Small system to administer web accounts across the KDE desktop
 Name:		plasma6-kaccounts-integration
-Version:	24.02.0
-Release:	%{?git:0.%{git}.}2
+Version:	24.02.1
+Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		System/Base
 %if 0%{?git:1}
