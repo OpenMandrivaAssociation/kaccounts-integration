@@ -5,7 +5,7 @@
 
 Summary:	Small system to administer web accounts across the KDE desktop
 Name:		plasma6-kaccounts-integration
-Version:	24.08.2
+Version:	24.08.3
 Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		System/Base
@@ -58,6 +58,7 @@ Small system to administer web accounts across the KDE desktop.
 %{_libdir}/qt6/plugins/kaccounts
 %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_kaccounts.so
 %{_datadir}/applications/kcm_kaccounts.desktop
+%{_datadir}/qlogging-categories6/kaccounts.categories
 
 #--------------------------------------------------------------------
 
