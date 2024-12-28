@@ -3,7 +3,7 @@
 Summary:	Small system to administer web accounts across the KDE desktop
 Name:		kaccounts-integration
 Version:	23.08.5
-Release:	2
+Release:	3
 License:	GPLv2+
 Group:		System/Base
 Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
@@ -45,7 +45,7 @@ Requires:	UbuntuOnlineAccounts-qml
 %description
 Small system to administer web accounts across the KDE desktop.
 
-%files -f %{name}.lang
+%files -f %{name}5.lang
 %_kde5_qmldir/org/kde/kaccounts
 %{_libdir}/qt5/plugins/kf5/kded/kded_accounts.so
 %{_libdir}/qt5/plugins/kaccounts
@@ -100,6 +100,12 @@ based on %name.
 
 %prep
 %autosetup -p1
+sed -i -e 's,-DTRANSLATION_DOMAIN=\"kaccounts-integration\",-DTRANSLATION_DOMAIN=\"kaccounts-integration5\",g' CMakeLists.txt
+cd po
+find . -name "*.po" |while read r; do
+	mv $r ${r/.po/5.po}
+done
+cd ..
 %cmake_kde5
 
 %build
@@ -107,4 +113,4 @@ based on %name.
 
 %install
 %ninja_install -C build
-%find_lang %{name}
+%find_lang %{name}5
