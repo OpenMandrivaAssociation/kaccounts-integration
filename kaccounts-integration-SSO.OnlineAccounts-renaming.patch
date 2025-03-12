@@ -1,0 +1,12 @@
+diff -up kaccounts-integration-24.12.3/example/accounts.qml.omv~ kaccounts-integration-24.12.3/example/accounts.qml
+--- kaccounts-integration-24.12.3/example/accounts.qml.omv~	2025-03-12 20:44:54.690813284 +0100
++++ kaccounts-integration-24.12.3/example/accounts.qml	2025-03-12 20:45:05.424620331 +0100
+@@ -1,7 +1,7 @@
+ import QtQuick 2.3
+ import QtQuick.Controls 2.15
+ import QtQuick.Layouts 1.1
+-import Ubuntu.OnlineAccounts 0.1 as OA
++import SSO.OnlineAccounts 0.1 as OA
+ import org.kde.kaccounts 1.2
+ 
+ ApplicationWindow

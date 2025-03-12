@@ -3,7 +3,7 @@
 Summary:	Small system to administer web accounts across the KDE desktop
 Name:		kaccounts-integration
 Version:	23.08.5
-Release:	3
+Release:	4
 License:	GPLv2+
 Group:		System/Base
 Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
@@ -41,6 +41,9 @@ Requires:	signond >= 8.58
 Requires:	signon-ui >= 0.17-0
 Requires:	signon-kwallet-extension
 Requires:	UbuntuOnlineAccounts-qml
+
+%patchlist
+kaccounts-integration-SSO.OnlineAccounts-renaming.patch
 
 %description
 Small system to administer web accounts across the KDE desktop.
