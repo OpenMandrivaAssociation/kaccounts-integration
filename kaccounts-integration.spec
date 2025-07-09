@@ -4,7 +4,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 
 Summary:	Small system to administer web accounts across the KDE desktop
-Name:		plasma6-kaccounts-integration
+Name:		kaccounts-integration
 Version:	25.04.0
 Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
