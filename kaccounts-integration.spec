@@ -5,7 +5,7 @@
 
 Summary:	Small system to administer web accounts across the KDE desktop
 Name:		kaccounts-integration
-Version:	25.04.0
+Version:	25.04.3
 Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		System/Base
@@ -51,13 +51,18 @@ Requires:	plasma6-signon-kwallet-extension
 # in example/accounts.qml
 Requires:	%{mklibname SSOAccounts-qml}
 
+%rename plasma6-kaccounts-integration
+
+BuildSystem:	cmake
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+
 %patchlist
 kaccounts-integration-SSO.OnlineAccounts-renaming.patch
 
 %description
 Small system to administer web accounts across the KDE desktop.
 
-%files -f kaccounts-integration.lang
+%files -f %{name}.lang
 %_qtdir/qml/org/kde/kaccounts
 %{_libdir}/qt6/plugins/kf6/kded/kded_accounts.so
 %{_libdir}/qt6/plugins/kaccounts
@@ -109,18 +114,3 @@ based on %name.
 %_includedir/KAccounts6
 %_libdir/cmake/KAccounts6
 %_libdir/libkaccounts6.so
-
-#--------------------------------------------------------------------
-
-%prep
-%autosetup -p1 -n kaccounts-integration-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja_build -C build
-
-%install
-%ninja_install -C build
-%find_lang kaccounts-integration
