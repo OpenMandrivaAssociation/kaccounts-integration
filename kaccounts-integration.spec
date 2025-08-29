@@ -5,7 +5,7 @@
 
 Summary:	Small system to administer web accounts across the KDE desktop
 Name:		kaccounts-integration
-Version:	25.04.3
+Version:	25.08.0
 Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		System/Base
@@ -35,7 +35,7 @@ BuildRequires:	cmake(KF6Config)
 BuildRequires:	cmake(KF6Wallet)
 BuildRequires:	cmake(KF6DBusAddons)
 BuildRequires:	cmake(KF6DAV)
-BuildRequires:	kdepimlibs-devel
+BuildRequires:	cmake(KPim6AkonadiMime)
 BuildRequires:	pkgconfig(libsignon-qt6)
 BuildRequires:	cmake(AccountsQt6)
 BuildRequires:	pkgconfig(libaccounts-glib) >= 1.21
